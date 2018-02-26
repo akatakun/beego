@@ -121,6 +121,7 @@ type ControllerInfo struct {
 }
 
 // ControllerRegister containers registered router rules, controller handlers and filters.
+// 追加されたルータールールとコントローラハンドラ、フィルターを含む
 type ControllerRegister struct {
 	routers      map[string]*Tree
 	enablePolicy bool
@@ -205,6 +206,7 @@ func (p *ControllerRegister) addWithMethodParams(pattern string, c ControllerInt
 	}
 }
 
+// ルーターに追加する
 func (p *ControllerRegister) addToRouter(method, pattern string, r *ControllerInfo) {
 	if !BConfig.RouterCaseSensitive {
 		pattern = strings.ToLower(pattern)

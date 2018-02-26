@@ -374,6 +374,7 @@ func (c *Controller) ParseForm(obj interface{}) error {
 }
 
 // GetString returns the input value by key string or the default value while it's present and input is blank
+// 可変長引数をデフォルト値にしているのか
 func (c *Controller) GetString(key string, def ...string) string {
 	if v := c.Ctx.Input.Query(key); v != "" {
 		return v
